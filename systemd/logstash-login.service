@@ -1,0 +1,12 @@
+[Unit]
+Description=Logstash instance to recieve the login data
+
+[Service]
+Type=simple
+User=logstash
+Group=root
+ExecStart=/opt/logstash/bin/logstash -f /opt/logstash/configuration/logstash-login.conf --log /opt/logstash/logs/login.log --verbose
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

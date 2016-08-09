@@ -1,0 +1,12 @@
+[Unit]
+Description=Logstash instance to recieve the connection data
+
+[Service]
+Type=simple
+User=logstash
+Group=logstash
+ExecStart=/opt/logstash/bin/logstash -f /opt/logstash/configuration/logstash-connection.conf --log /opt/logstash/logs/connection.log --verbose
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
