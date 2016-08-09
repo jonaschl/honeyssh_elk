@@ -36,6 +36,10 @@ echo "Install logstash configuration files"
 cp -f ../logstash_conf/logstash-connection.conf  /opt/logstash/configuration/logstash-connection.conf
 cp -f ../logstash_conf/logstash-login.conf  /opt/logstash/configuration/logstash-login.conf
 
+echo "Install nginx configuration file"
+cp -f ../nginx/kibana.conf /etc/nginx/conf.d/kibana.conf
+
+
 echo "Set permissions"
 
 chown -R logstash:logstash /opt/logstash/configuration/
